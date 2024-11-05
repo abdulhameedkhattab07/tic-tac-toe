@@ -20,7 +20,7 @@ function renderBoard() {
         let cellElement = document.createElement("div"); // create a new element
         cellElement.textContent = board[i]; // set the text content to the values in the board array
         cellElement.classList.add("cell"); // add a new class to the cellElemt
-        cellElement.addEventListener("click", () => { playerMove(cellElement); });
+        cellElement.addEventListener("click", () => { playerMove(cellElement);});
         cellElement.setAttribute("value", i);
         gameBoardElement.appendChild(cellElement); // append child
     }
@@ -62,8 +62,8 @@ function computerMove() {
             availableMoves.push(i);
         }
     }
-    let moveIndex = Math.floor(Math.random()) // generate a random number and round it up to the nearest whole number
-    let randomIndex = availableMoves[(moveIndex * availableMoves.length)]; // generate a random index for the computer to move to
+    let moveIndex = Math.floor(Math.random() * availableMoves.length) // generate a random number and round it up to the nearest whole number
+    let randomIndex = availableMoves[(moveIndex )]; // generate a random index for the computer to move to
     board[randomIndex] = "O"; // update the board array at position index to hold the computer choice i.e, O
     updateGame();// calls the updateGame function
 }
